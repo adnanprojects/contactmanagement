@@ -1,4 +1,5 @@
 const express = require('express');
+const errorHandler = require('./middleware/errorHandler');
 const dotenv = require('dotenv').config();
 
 const app = express();
@@ -14,6 +15,7 @@ app.get('/', (request, response) => {
 // middleware
 app.use(express.json());
 app.use('/api/contacts', require('./routes/contactRoutes'));
+app.use(errorHandler);
 
 // Listening Server
 app.listen(port, () => {
