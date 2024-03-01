@@ -1,7 +1,6 @@
 const { constant } = require('../constant');
 
 const errorHandler = (error, request, response, next) => {
-    // console.log(request.statusCode);
     const statusCode = request.statusCode ? request.statusCode : 500;
     switch (statusCode) {
         case constant.VALIDATION_ERROR:
