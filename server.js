@@ -1,7 +1,6 @@
 const express = require('express');
 const errorHandler = require('./middleware/errorHandler');
 const dotenv = require('dotenv').config();
-const mongoose = require('mongoose');
 const connectDB = require('./db');
 
 const app = express();
@@ -15,7 +14,7 @@ app.get('/', (request, response) => {
 });
 
 // connect DB
-// connectDB();
+connectDB();
 
 // middleware
 app.use(express.json());
